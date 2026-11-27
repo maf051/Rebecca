@@ -183,3 +183,5 @@ go/internal/gateway/static/dashboard/build/*
 .tmp*
 tmp/
 artifacts/
+.prisma-composer/
+.alchemy/
