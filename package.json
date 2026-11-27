@@ -1,0 +1,31 @@
+{
+  "name": "testvibecilo",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "dashboard"
+  ],
+  "scripts": {
+    "build": "node scripts/ensure-dashboard-deps.mjs && npm run build --workspace dashboard && node scripts/assemble-dist.mjs",
+    "typecheck": "node scripts/ensure-dashboard-deps.mjs && tsc -p dashboard --noEmit",
+    "test": "node scripts/ensure-dashboard-deps.mjs && npm test --workspace dashboard"
+  },
+  "dependencies": {
+    "@prisma/composer": "0.40.0",
+    "@prisma/composer-prisma-cloud": "0.40.0",
+    "@prisma/orm-postgres": "8.0.0-rc.25",
+    "effect": "4.1.4",
+    "pg": "^8.22.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.20.0",
+    "prisma": "8.0.0-rc.35",
+    "typescript": "^7.0.2"
+  },
+  "overrides": {
+    "effect": "4.1.4",
+    "@effect/platform-bun": "4.1.4",
+    "@effect/platform-node": "4.1.4",
+    "@effect/platform-node-shared": "4.1.4"
+  }
+}
